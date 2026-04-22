@@ -1,37 +1,70 @@
 <svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1600" height="900" fill="#F8FAFC"/>
-  <rect x="0" y="0" width="1600" height="900" fill="url(#bg)"/>
-  <circle cx="1280" cy="140" r="220" fill="#DBEAFE" fill-opacity="0.9"/>
-  <circle cx="144" cy="756" r="180" fill="#DCFCE7" fill-opacity="0.8"/>
-  <rect x="92" y="90" width="1416" height="720" rx="40" fill="#FFFFFF" fill-opacity="0.82"/>
-  <rect x="126" y="124" width="600" height="652" rx="28" fill="#0F172A"/>
-  <text x="170" y="228" fill="#FFFFFF" font-size="88" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Excel-Dr</text>
-  <text x="170" y="296" fill="#93C5FD" font-size="34" font-family="Segoe UI, Microsoft YaHei, sans-serif">像手术刀一样，精准识别并清理 Excel 隐藏垃圾数据</text>
-  <text x="170" y="388" fill="#E2E8F0" font-size="34" font-family="Segoe UI, Microsoft YaHei, sans-serif">面向财务、运营、订单、仓储等真实办公报表场景</text>
-  <text x="170" y="454" fill="#E2E8F0" font-size="34" font-family="Segoe UI, Microsoft YaHei, sans-serif">保守清理隐藏 drawing 膨胀对象，不粗暴破坏公式和图片</text>
-  <text x="170" y="520" fill="#E2E8F0" font-size="34" font-family="Segoe UI, Microsoft YaHei, sans-serif">支持单文件处理、文件夹批量处理、便携版 Windows EXE</text>
-  <rect x="170" y="598" width="196" height="66" rx="18" fill="#2563EB"/>
-  <text x="210" y="641" fill="#FFFFFF" font-size="30" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Open Source</text>
-  <rect x="382" y="598" width="228" height="66" rx="18" fill="#16A34A"/>
-  <text x="425" y="641" fill="#FFFFFF" font-size="30" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Portable EXE</text>
-  <rect x="778" y="150" width="650" height="572" rx="28" fill="#F8FAFC"/>
-  <rect x="812" y="186" width="582" height="42" rx="12" fill="#CBD5E1"/>
-  <rect x="812" y="252" width="400" height="26" rx="10" fill="#111827"/>
-  <rect x="812" y="300" width="548" height="64" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
-  <rect x="1264" y="300" width="96" height="64" rx="14" fill="#E2E8F0"/>
-  <rect x="812" y="392" width="548" height="64" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
-  <rect x="1264" y="392" width="96" height="64" rx="14" fill="#E2E8F0"/>
-  <rect x="812" y="494" width="120" height="50" rx="12" fill="#111827"/>
-  <rect x="952" y="494" width="168" height="50" rx="12" fill="#2563EB"/>
-  <rect x="812" y="576" width="548" height="112" rx="18" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
-  <text x="842" y="620" fill="#111827" font-size="28" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">扫描文件数：12</text>
-  <text x="842" y="662" fill="#334155" font-size="24" font-family="Segoe UI, Microsoft YaHei, sans-serif">需要处理的文件：3</text>
-  <text x="1088" y="662" fill="#334155" font-size="24" font-family="Segoe UI, Microsoft YaHei, sans-serif">异常隐藏对象：58201</text>
   <defs>
-    <linearGradient id="bg" x1="94" y1="54" x2="1498" y2="862" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#EFF6FF"/>
-      <stop offset="0.52" stop-color="#F8FAFC"/>
+    <linearGradient id="bg" x1="110" y1="80" x2="1490" y2="830" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEF4FF"/>
+      <stop offset="0.48" stop-color="#F8FAFC"/>
       <stop offset="1" stop-color="#ECFDF5"/>
     </linearGradient>
+    <linearGradient id="panel" x1="150" y1="150" x2="760" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <filter id="shadow" x="774" y="149" width="677" height="569" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="18"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.0588235 0 0 0 0 0.0941176 0 0 0 0 0.164706 0 0 0 0.12 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1" result="shape"/>
+    </filter>
   </defs>
+
+  <rect width="1600" height="900" rx="0" fill="url(#bg)"/>
+  <circle cx="1380" cy="126" r="188" fill="#DBEAFE"/>
+  <circle cx="165" cy="770" r="150" fill="#DCFCE7"/>
+  <circle cx="1260" cy="760" r="110" fill="#E0F2FE"/>
+
+  <rect x="96" y="96" width="1408" height="708" rx="42" fill="#FFFFFF" fill-opacity="0.82"/>
+
+  <rect x="144" y="146" width="554" height="608" rx="34" fill="url(#panel)"/>
+
+  <rect x="196" y="194" width="88" height="88" rx="24" fill="#F8FAFC"/>
+  <rect x="214" y="212" width="52" height="52" rx="14" fill="#0F172A"/>
+  <rect x="226" y="224" width="24" height="24" rx="6" fill="#E2E8F0"/>
+  <rect x="232" y="230" width="8" height="8" rx="3" fill="#16A34A"/>
+  <rect x="244" y="230" width="8" height="8" rx="3" fill="#38BDF8"/>
+  <rect x="232" y="242" width="8" height="8" rx="3" fill="#38BDF8"/>
+  <rect x="244" y="242" width="8" height="8" rx="3" fill="#16A34A"/>
+  <path d="M250 255L274 231C278 227 284 227 288 231C292 235 292 241 288 245L264 269L250 255Z" fill="#EF4444"/>
+  <path d="M242 263L256 277L248 285C244 289 238 289 234 285L228 279L242 263Z" fill="#F8FAFC"/>
+
+  <text x="196" y="354" fill="#FFFFFF" font-size="94" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Excel-Dr</text>
+  <text x="196" y="418" fill="#93C5FD" font-size="34" font-family="Segoe UI, Microsoft YaHei, sans-serif">像手术刀一样，精准识别并清理 Excel 隐藏垃圾数据</text>
+
+  <text x="196" y="510" fill="#E5E7EB" font-size="30" font-family="Segoe UI, Microsoft YaHei, sans-serif">专为财务、运营、订单、仓储等真实办公报表场景设计</text>
+  <text x="196" y="560" fill="#E5E7EB" font-size="30" font-family="Segoe UI, Microsoft YaHei, sans-serif">保守处理异常隐藏对象，不粗暴破坏公式、样式和图片公式</text>
+
+  <rect x="196" y="620" width="168" height="58" rx="16" fill="#2563EB"/>
+  <text x="229" y="658" fill="#FFFFFF" font-size="28" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Portable EXE</text>
+  <rect x="382" y="620" width="146" height="58" rx="16" fill="#16A34A"/>
+  <text x="418" y="658" fill="#FFFFFF" font-size="28" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Batch Safe</text>
+  <rect x="544" y="620" width="112" height="58" rx="16" fill="#F59E0B"/>
+  <text x="571" y="658" fill="#111827" font-size="28" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Open</text>
+
+  <g filter="url(#shadow)">
+    <rect x="810" y="185" width="605" height="497" rx="28" fill="#FFFFFF"/>
+  </g>
+  <rect x="842" y="221" width="190" height="16" rx="8" fill="#CBD5E1"/>
+  <rect x="1046" y="221" width="112" height="16" rx="8" fill="#DBEAFE"/>
+  <rect x="1172" y="221" width="104" height="16" rx="8" fill="#DCFCE7"/>
+  <rect x="842" y="274" width="145" height="20" rx="10" fill="#111827"/>
+  <rect x="842" y="324" width="466" height="64" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="1224" y="324" width="84" height="64" rx="14" fill="#E2E8F0"/>
+  <rect x="842" y="416" width="466" height="64" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="1224" y="416" width="84" height="64" rx="14" fill="#E2E8F0"/>
+  <rect x="842" y="518" width="124" height="50" rx="14" fill="#111827"/>
+  <rect x="986" y="518" width="174" height="50" rx="14" fill="#2563EB"/>
+  <rect x="842" y="604" width="466" height="40" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="870" y="632" fill="#334155" font-size="24" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="600">检测、确认、清理、另存</text>
 </svg>
