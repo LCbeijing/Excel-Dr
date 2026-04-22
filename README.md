@@ -6,14 +6,10 @@
 [![Format](https://img.shields.io/badge/format-.xlsx-16A34A?style=flat-square)](https://github.com/LCbeijing/Excel-Dr)
 
 <p align="center">
-  <img src="./assets/icon.svg" alt="Excel-Dr icon" width="120" />
-</p>
-
-<p align="center">
   <strong>一款专门修复 Excel / WPS 报表隐藏垃圾数据问题的便携工具。</strong>
 </p>
 
-![Excel-Dr Cover](./assets/banner.svg)
+![Excel-Dr Cover](./docs/images/cover.png)
 
 ## What Is It
 
