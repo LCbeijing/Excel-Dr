@@ -1,70 +1,88 @@
 <svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="110" y1="80" x2="1490" y2="830" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="154" y1="92" x2="1458" y2="822" gradientUnits="userSpaceOnUse">
       <stop stop-color="#EEF4FF"/>
-      <stop offset="0.48" stop-color="#F8FAFC"/>
+      <stop offset="0.45" stop-color="#F8FAFC"/>
       <stop offset="1" stop-color="#ECFDF5"/>
     </linearGradient>
-    <linearGradient id="panel" x1="150" y1="150" x2="760" y2="760" gradientUnits="userSpaceOnUse">
+    <linearGradient id="panel" x1="178" y1="138" x2="824" y2="748" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0F172A"/>
       <stop offset="1" stop-color="#111827"/>
     </linearGradient>
-    <filter id="shadow" x="774" y="149" width="677" height="569" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <radialGradient id="glowBlue" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1194 198) rotate(90) scale(224 224)">
+      <stop stop-color="#BFDBFE"/>
+      <stop offset="1" stop-color="#BFDBFE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowGreen" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1362 692) rotate(90) scale(172 172)">
+      <stop stop-color="#BBF7D0"/>
+      <stop offset="1" stop-color="#BBF7D0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softShadow" x="862" y="146" width="482" height="504" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
       <feOffset dy="18"/>
-      <feGaussianBlur stdDeviation="18"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0.0588235 0 0 0 0 0.0941176 0 0 0 0 0.164706 0 0 0 0.12 0"/>
+      <feGaussianBlur stdDeviation="22"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.0588235 0 0 0 0 0.0941176 0 0 0 0 0.164706 0 0 0 0.14 0"/>
       <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1"/>
       <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1" result="shape"/>
     </filter>
   </defs>
 
-  <rect width="1600" height="900" rx="0" fill="url(#bg)"/>
-  <circle cx="1380" cy="126" r="188" fill="#DBEAFE"/>
-  <circle cx="165" cy="770" r="150" fill="#DCFCE7"/>
-  <circle cx="1260" cy="760" r="110" fill="#E0F2FE"/>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1204" cy="186" r="236" fill="url(#glowBlue)"/>
+  <circle cx="1388" cy="704" r="186" fill="url(#glowGreen)"/>
+  <circle cx="182" cy="744" r="124" fill="#D9F99D" fill-opacity="0.28"/>
+  <circle cx="1308" cy="774" r="76" fill="#93C5FD" fill-opacity="0.24"/>
 
-  <rect x="96" y="96" width="1408" height="708" rx="42" fill="#FFFFFF" fill-opacity="0.82"/>
+  <rect x="96" y="96" width="1408" height="708" rx="44" fill="#FFFFFF" fill-opacity="0.82"/>
 
-  <rect x="144" y="146" width="554" height="608" rx="34" fill="url(#panel)"/>
+  <rect x="146" y="146" width="650" height="608" rx="36" fill="url(#panel)"/>
+  <rect x="196" y="198" width="96" height="96" rx="28" fill="#F8FAFC"/>
+  <rect x="216" y="218" width="56" height="56" rx="16" fill="#111827"/>
+  <rect x="228" y="230" width="28" height="28" rx="8" fill="#E2E8F0"/>
+  <rect x="235" y="237" width="9" height="9" rx="3" fill="#16A34A"/>
+  <rect x="248" y="237" width="9" height="9" rx="3" fill="#38BDF8"/>
+  <rect x="235" y="250" width="9" height="9" rx="3" fill="#38BDF8"/>
+  <rect x="248" y="250" width="9" height="9" rx="3" fill="#16A34A"/>
+  <path d="M254 265L279 240C283 236 289 236 293 240C297 244 297 250 293 254L268 279L254 265Z" fill="#EF4444"/>
+  <path d="M246 273L260 287L252 295C248 299 242 299 238 295L232 289L246 273Z" fill="#F8FAFC"/>
 
-  <rect x="196" y="194" width="88" height="88" rx="24" fill="#F8FAFC"/>
-  <rect x="214" y="212" width="52" height="52" rx="14" fill="#0F172A"/>
-  <rect x="226" y="224" width="24" height="24" rx="6" fill="#E2E8F0"/>
-  <rect x="232" y="230" width="8" height="8" rx="3" fill="#16A34A"/>
-  <rect x="244" y="230" width="8" height="8" rx="3" fill="#38BDF8"/>
-  <rect x="232" y="242" width="8" height="8" rx="3" fill="#38BDF8"/>
-  <rect x="244" y="242" width="8" height="8" rx="3" fill="#16A34A"/>
-  <path d="M250 255L274 231C278 227 284 227 288 231C292 235 292 241 288 245L264 269L250 255Z" fill="#EF4444"/>
-  <path d="M242 263L256 277L248 285C244 289 238 289 234 285L228 279L242 263Z" fill="#F8FAFC"/>
+  <text x="196" y="386" fill="#FFFFFF" font-size="102" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Excel-Dr</text>
+  <text x="196" y="448" fill="#93C5FD" font-size="30" font-family="Segoe UI, Microsoft YaHei, sans-serif" letter-spacing="2">PRECISION WORKBOOK REPAIR</text>
 
-  <text x="196" y="354" fill="#FFFFFF" font-size="94" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Excel-Dr</text>
-  <text x="196" y="418" fill="#93C5FD" font-size="34" font-family="Segoe UI, Microsoft YaHei, sans-serif">像手术刀一样，精准识别并清理 Excel 隐藏垃圾数据</text>
+  <text x="196" y="546" fill="#F8FAFC" font-size="42" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">修复 Excel / WPS 报表里的隐藏垃圾数据</text>
+  <text x="196" y="604" fill="#CBD5E1" font-size="28" font-family="Segoe UI, Microsoft YaHei, sans-serif">为长期维护、多人接力、越用越卡的业务报表而生</text>
 
-  <text x="196" y="510" fill="#E5E7EB" font-size="30" font-family="Segoe UI, Microsoft YaHei, sans-serif">专为财务、运营、订单、仓储等真实办公报表场景设计</text>
-  <text x="196" y="560" fill="#E5E7EB" font-size="30" font-family="Segoe UI, Microsoft YaHei, sans-serif">保守处理异常隐藏对象，不粗暴破坏公式、样式和图片公式</text>
+  <rect x="196" y="650" width="164" height="60" rx="18" fill="#2563EB"/>
+  <text x="227" y="689" fill="#FFFFFF" font-size="28" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Portable EXE</text>
+  <rect x="378" y="650" width="154" height="60" rx="18" fill="#16A34A"/>
+  <text x="416" y="689" fill="#FFFFFF" font-size="28" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Safe Clean</text>
+  <rect x="548" y="650" width="112" height="60" rx="18" fill="#F59E0B"/>
+  <text x="576" y="689" fill="#111827" font-size="28" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Open</text>
 
-  <rect x="196" y="620" width="168" height="58" rx="16" fill="#2563EB"/>
-  <text x="229" y="658" fill="#FFFFFF" font-size="28" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Portable EXE</text>
-  <rect x="382" y="620" width="146" height="58" rx="16" fill="#16A34A"/>
-  <text x="418" y="658" fill="#FFFFFF" font-size="28" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Batch Safe</text>
-  <rect x="544" y="620" width="112" height="58" rx="16" fill="#F59E0B"/>
-  <text x="571" y="658" fill="#111827" font-size="28" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Open</text>
-
-  <g filter="url(#shadow)">
-    <rect x="810" y="185" width="605" height="497" rx="28" fill="#FFFFFF"/>
+  <g filter="url(#softShadow)">
+    <rect x="908" y="192" width="390" height="412" rx="36" fill="#FFFFFF"/>
   </g>
-  <rect x="842" y="221" width="190" height="16" rx="8" fill="#CBD5E1"/>
-  <rect x="1046" y="221" width="112" height="16" rx="8" fill="#DBEAFE"/>
-  <rect x="1172" y="221" width="104" height="16" rx="8" fill="#DCFCE7"/>
-  <rect x="842" y="274" width="145" height="20" rx="10" fill="#111827"/>
-  <rect x="842" y="324" width="466" height="64" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
-  <rect x="1224" y="324" width="84" height="64" rx="14" fill="#E2E8F0"/>
-  <rect x="842" y="416" width="466" height="64" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
-  <rect x="1224" y="416" width="84" height="64" rx="14" fill="#E2E8F0"/>
-  <rect x="842" y="518" width="124" height="50" rx="14" fill="#111827"/>
-  <rect x="986" y="518" width="174" height="50" rx="14" fill="#2563EB"/>
-  <rect x="842" y="604" width="466" height="40" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
-  <text x="870" y="632" fill="#334155" font-size="24" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="600">检测、确认、清理、另存</text>
+
+  <circle cx="1103" cy="266" r="116" fill="#EFF6FF"/>
+  <circle cx="1103" cy="266" r="86" fill="#DBEAFE"/>
+  <circle cx="1103" cy="266" r="56" fill="#BFDBFE"/>
+  <path d="M1062 301L1118 245C1128 235 1143 235 1153 245C1163 255 1163 270 1153 280L1097 336L1062 301Z" fill="#EF4444"/>
+  <path d="M1050 313L1084 347L1063 368C1053 378 1038 378 1028 368L1014 354L1050 313Z" fill="#F8FAFC"/>
+  <path d="M1032 214C1032 183.072 1057.07 158 1088 158H1118C1148.93 158 1174 183.072 1174 214V230H1032V214Z" fill="#1D4ED8"/>
+  <rect x="1038" y="186" width="130" height="90" rx="18" fill="#F8FAFC"/>
+  <rect x="1054" y="202" width="26" height="26" rx="6" fill="#16A34A"/>
+  <rect x="1088" y="202" width="26" height="26" rx="6" fill="#38BDF8"/>
+  <rect x="1122" y="202" width="26" height="26" rx="6" fill="#CBD5E1"/>
+  <rect x="1054" y="236" width="26" height="26" rx="6" fill="#38BDF8"/>
+  <rect x="1088" y="236" width="26" height="26" rx="6" fill="#16A34A"/>
+  <rect x="1122" y="236" width="26" height="26" rx="6" fill="#CBD5E1"/>
+
+  <rect x="980" y="430" width="246" height="54" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="1015" y="465" fill="#0F172A" font-size="26" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Detect</text>
+  <rect x="980" y="500" width="246" height="54" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="1015" y="535" fill="#0F172A" font-size="26" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Clean</text>
+
+  <rect x="952" y="646" width="302" height="56" rx="18" fill="#0F172A"/>
+  <text x="1007" y="683" fill="#FFFFFF" font-size="28" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Windows Portable Tool</text>
 </svg>
