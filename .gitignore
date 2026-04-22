@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+build/
+dist/
+portable_release/
+
+*.spec
+
+.idea/
+.vscode/
+
+Thumbs.db
+.DS_Store
