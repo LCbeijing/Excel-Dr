@@ -54,55 +54,40 @@ $g.FillEllipse($glowGreen, 18, 760, 120, 120)
 $shellBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(220,255,255,255))
 Fill-RoundedRect $g $shellBrush 54 78 1492 744 40
 
-$leftBrush = New-Object System.Drawing.Drawing2D.LinearGradientBrush(
-    (New-Object System.Drawing.Rectangle 110,132,390,610),
-    [System.Drawing.Color]::FromArgb(255,15,23,42),
-    [System.Drawing.Color]::FromArgb(255,17,24,39),
-    90
-)
-Fill-RoundedRect $g $leftBrush 110 132 390 610 32
-
-$titleFont = New-Object System.Drawing.Font('Segoe UI', 46, [System.Drawing.FontStyle]::Bold)
+$titleFont = New-Object System.Drawing.Font('Segoe UI', 52, [System.Drawing.FontStyle]::Bold)
 $subFont = New-Object System.Drawing.Font('Segoe UI', 15, [System.Drawing.FontStyle]::Regular)
-$h1Font = New-Object System.Drawing.Font('Segoe UI', 20, [System.Drawing.FontStyle]::Bold)
-$bodyFont = New-Object System.Drawing.Font('Segoe UI', 16, [System.Drawing.FontStyle]::Regular)
-$pillFont = New-Object System.Drawing.Font('Segoe UI', 16, [System.Drawing.FontStyle]::Bold)
+$h1Font = New-Object System.Drawing.Font('Segoe UI', 28, [System.Drawing.FontStyle]::Bold)
+$bodyFont = New-Object System.Drawing.Font('Segoe UI', 17, [System.Drawing.FontStyle]::Regular)
+$metaFont = New-Object System.Drawing.Font('Consolas', 13, [System.Drawing.FontStyle]::Regular)
 
 $white = [System.Drawing.Brushes]::White
+$darkBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255,15,23,42))
 $blueBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255,147,197,253))
-$muted = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255,203,213,225))
+$muted = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255,71,85,105))
+$accentBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255,59,130,246))
 
-$g.DrawString('Excel-Dr', $titleFont, $white, 150, 210)
-$g.DrawString('PRECISION WORKBOOK REPAIR', $subFont, $blueBrush, 154, 282)
-$g.DrawString('Fix workbook junk', $h1Font, $white, 154, 362)
+$g.FillRectangle($accentBrush, 118, 204, 10, 236)
+$g.DrawString('Excel-Dr', $titleFont, $darkBrush, 152, 206)
+$g.DrawString('PRECISION WORKBOOK REPAIR', $subFont, $blueBrush, 156, 286)
+$g.DrawString('Repair hidden', $h1Font, $darkBrush, 152, 394)
+$g.DrawString('workbook junk', $h1Font, $darkBrush, 152, 436)
 
 $body1 = 'Real product UI'
 $body2 = 'Portable Windows EXE'
-$body3 = 'Keeps formulas, styles, and valid images intact'
-$body4 = 'Targets hidden drawing junk only'
-$g.DrawString($body1, $bodyFont, $muted, 154, 440)
-$g.DrawString($body2, $bodyFont, $muted, 154, 476)
-$g.DrawString($body3, $bodyFont, $muted, (New-Object System.Drawing.RectangleF(154, 520, 300, 56)))
-$g.DrawString($body4, $bodyFont, $muted, (New-Object System.Drawing.RectangleF(154, 586, 300, 32)))
-
-$pill1 = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255,37,99,235))
-$pill2 = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255,22,163,74))
-$pill3 = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255,245,158,11))
-Fill-RoundedRect $g $pill1 154 644 136 54 16
-Fill-RoundedRect $g $pill2 302 644 128 54 16
-Fill-RoundedRect $g $pill3 442 644 62 54 16
-$g.DrawString('Portable', $pillFont, $white, 180, 658)
-$g.DrawString('Real UI', $pillFont, $white, 328, 658)
-$g.DrawString('EXE', $pillFont, [System.Drawing.Brushes]::Black, 456, 658)
+$body3 = 'Safe cleanup for hidden drawing junk'
+$g.DrawString($body1, $bodyFont, $muted, 156, 530)
+$g.DrawString($body2, $bodyFont, $muted, 156, 572)
+$g.DrawString($body3, $bodyFont, $muted, (New-Object System.Drawing.RectangleF(156, 618, 250, 64)))
+$g.DrawString('FORMULAS / VALID IMAGES PRESERVED', $metaFont, $blueBrush, 156, 704)
 
 $cardShadow = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(30,15,23,42))
-Fill-RoundedRect $g $cardShadow 542 124 996 652 30
+Fill-RoundedRect $g $cardShadow 572 124 966 652 30
 $cardBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255,248,250,252))
-Fill-RoundedRect $g $cardBrush 522 104 996 652 30
+Fill-RoundedRect $g $cardBrush 552 104 966 652 30
 
 $shot = [System.Drawing.Image]::FromFile($screenshot)
-$shotRect = New-Object System.Drawing.Rectangle 550,132,940,604
-$clip = New-RoundedRectPath 550 132 940 604 24
+$shotRect = New-Object System.Drawing.Rectangle 580,132,920,604
+$clip = New-RoundedRectPath 580 132 920 604 24
 $oldClip = $g.Clip
 $g.SetClip($clip)
 $g.DrawImage($shot, $shotRect)
@@ -110,9 +95,9 @@ $g.Clip = $oldClip
 $clip.Dispose()
 
 $overlayBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(14,255,255,255))
-Fill-RoundedRect $g $overlayBrush 550 132 940 604 24
+Fill-RoundedRect $g $overlayBrush 580 132 920 604 24
 $framePen = New-Object System.Drawing.Pen ([System.Drawing.Color]::FromArgb(255,203,213,225), 2)
-Draw-RoundedRect $g $framePen 550 132 940 604 24
+Draw-RoundedRect $g $framePen 580 132 920 604 24
 
 $labelBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255,15,23,42))
 Fill-RoundedRect $g $labelBrush 920 748 220 50 18
@@ -124,12 +109,10 @@ $bgBrush.Dispose()
 $glowBlue.Dispose()
 $glowGreen.Dispose()
 $shellBrush.Dispose()
-$leftBrush.Dispose()
+$darkBrush.Dispose()
 $blueBrush.Dispose()
 $muted.Dispose()
-$pill1.Dispose()
-$pill2.Dispose()
-$pill3.Dispose()
+$accentBrush.Dispose()
 $cardShadow.Dispose()
 $cardBrush.Dispose()
 $overlayBrush.Dispose()
@@ -139,7 +122,7 @@ $titleFont.Dispose()
 $subFont.Dispose()
 $h1Font.Dispose()
 $bodyFont.Dispose()
-$pillFont.Dispose()
+$metaFont.Dispose()
 $labelFont.Dispose()
 
 $bmp.Save($out, [System.Drawing.Imaging.ImageFormat]::Png)

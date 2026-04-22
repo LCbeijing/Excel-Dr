@@ -1,9 +1,11 @@
-# Excel-Dr
+<h1 align="center">Excel-Dr</h1>
 
-[![Release](https://img.shields.io/github/v/release/LCbeijing/Excel-Dr?display_name=tag&style=flat-square)](https://github.com/LCbeijing/Excel-Dr/releases)
-[![License](https://img.shields.io/github/license/LCbeijing/Excel-Dr?style=flat-square)](./LICENSE)
-[![Platform](https://img.shields.io/badge/platform-Windows-0F172A?style=flat-square)](https://github.com/LCbeijing/Excel-Dr)
-[![Format](https://img.shields.io/badge/format-.xlsx-16A34A?style=flat-square)](https://github.com/LCbeijing/Excel-Dr)
+<p align="center">
+  <a href="https://github.com/LCbeijing/Excel-Dr/releases"><img alt="Release" src="https://img.shields.io/github/v/release/LCbeijing/Excel-Dr?display_name=tag&style=flat-square"></a>
+  <a href="./LICENSE"><img alt="License" src="https://img.shields.io/github/license/LCbeijing/Excel-Dr?style=flat-square"></a>
+  <a href="https://github.com/LCbeijing/Excel-Dr"><img alt="Platform" src="https://img.shields.io/badge/platform-Windows-0F172A?style=flat-square"></a>
+  <a href="https://github.com/LCbeijing/Excel-Dr"><img alt="Format" src="https://img.shields.io/badge/format-.xlsx-16A34A?style=flat-square"></a>
+</p>
 
 <p align="center">
   <strong>一款专门修复 Excel / WPS 报表隐藏垃圾数据问题的便携工具。</strong>
