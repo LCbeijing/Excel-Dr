@@ -147,6 +147,17 @@ Excel-Dr 把这件事产品化成了一个非常直接的流程：
 
 ## Run It
 
+### V1.1 Download
+
+GitHub Release page: [v1.1.0](https://github.com/LCbeijing/Excel-Dr/releases/tag/v1.1.0)
+
+Download these assets from the release page:
+
+- `Excel-Dr-Single.exe`
+- `Excel-Dr-Flutter-portable.zip`
+
+If the release assets are missing, run the `Windows Release` GitHub Actions workflow with tag `v1.1.0`; it builds and uploads the Windows package on GitHub.
+
 ### Windows 单文件版（推荐）
 
 从 [GitHub Releases](https://github.com/LCbeijing/Excel-Dr/releases) 下载：
