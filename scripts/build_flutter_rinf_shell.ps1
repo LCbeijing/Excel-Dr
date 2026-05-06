@@ -21,6 +21,7 @@ cargo check --manifest-path ".\native\hub\Cargo.toml"
 flutter build windows --release
 
 $release = Resolve-Path ".\build\windows\x64\runner\Release"
+New-Item -ItemType Directory -Path $dist -Force | Out-Null
 $distFull = Resolve-Path $dist
 $portableFull = [System.IO.Path]::GetFullPath($portableDir)
 if (-not $portableFull.StartsWith($distFull.Path, [System.StringComparison]::OrdinalIgnoreCase)) {
