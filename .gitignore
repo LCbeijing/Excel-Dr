@@ -6,6 +6,17 @@ __pycache__/
 build/
 dist/
 portable_release/
+docs/codex/
+tests/output/
+tests/fixtures/**/*_cleaned*.xlsx
+tests/fixtures/dirty/*.xlsx
+tests/fixtures/batch/Z-*.xlsx
+rust/**/target/
+apps/**/build/
+apps/**/.dart_tool/
+apps/**/native/**/target/
+apps/**/windows/flutter/ephemeral/
+apps/**/build-*.log
 
 *.spec
 

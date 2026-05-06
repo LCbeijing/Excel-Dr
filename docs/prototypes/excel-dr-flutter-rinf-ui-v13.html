@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Excel-Dr UI v13</title>
+  <style>
+    :root {
+      --bg: #f4f8f8;
+      --surface: #ffffff;
+      --soft: #f7fbfb;
+      --line: #d9e7e8;
+      --line-strong: #abc6ca;
+      --text: #102027;
+      --muted: #60757d;
+      --subtle: #8aa0a7;
+      --primary: #08735f;
+      --primary-dark: #055f50;
+      --primary-soft: #e7f5f1;
+      --disabled-bg: #edf2f3;
+      --disabled-text: #93a5aa;
+      --ink: #102027;
+      --shadow: 0 18px 48px rgba(16, 32, 39, 0.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f7fbfb 0%, #edf5f6 100%);
+      color: var(--text);
+      font-family: "Microsoft YaHei UI", "Microsoft YaHei", Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    .stage {
+      width: 1280px;
+      height: 900px;
+      padding: 28px;
+    }
+
+    .window {
+      width: 1224px;
+      height: 844px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-rows: 64px 1fr;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .topbar {
+      height: 64px;
+      padding: 0 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      background: rgba(248, 251, 251, 0.92);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--primary), #14917d);
+      color: #fff;
+      font-weight: 800;
+      line-height: 1;
+      box-shadow: 0 8px 18px rgba(8, 115, 95, 0.22);
+    }
+
+    .brand strong {
+      font-size: 17px;
+      line-height: 1;
+    }
+
+    .button {
+      height: 40px;
+      padding: 0 18px;
+      border: 1px solid var(--line-strong);
+      border-radius: 11px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #eef5f6;
+      color: #27454d;
+      font-weight: 800;
+      line-height: 1;
+      white-space: nowrap;
+      cursor: default;
+    }
+
+    .button.primary {
+      height: 42px;
+      min-width: 168px;
+      border: none;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      box-shadow: 0 10px 20px rgba(8, 115, 95, 0.20);
+    }
+
+    .button.disabled {
+      color: var(--disabled-text);
+      background: var(--disabled-bg);
+      border-color: #d7e0e2;
+      box-shadow: none;
+    }
+
+    .content {
+      min-height: 0;
+      padding: 16px 28px 22px;
+      display: grid;
+      grid-template-columns: 370px 1fr;
+      gap: 24px;
+    }
+
+    .left,
+    .right {
+      min-height: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .left {
+      grid-template-rows: auto auto auto auto;
+      align-content: start;
+    }
+
+    .right {
+      grid-template-rows: 116px 1fr;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 25px;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(16, 32, 39, 0.04);
+    }
+
+    .card.pad {
+      padding: 16px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .section-title strong {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .step-tag {
+      height: 26px;
+      padding: 0 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .segmented {
+      height: 40px;
+      padding: 4px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      border: 1px solid var(--line-strong);
+      border-radius: 13px;
+      background: #e9f1f2;
+      margin-bottom: 10px;
+    }
+
+    .segment {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .segment.active {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 6px 14px rgba(8, 115, 95, 0.18);
+    }
+
+    .file-box {
+      min-height: 74px;
+      padding: 10px 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: 16px;
+      background: var(--soft);
+      display: grid;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .file-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .file-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .file-row strong {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .file-meta {
+      padding-left: 44px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .operation-card {
+      padding: 16px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .action-block {
+      display: grid;
+      grid-template-columns: 66px minmax(0, 1fr);
+      grid-template-rows: auto 40px;
+      gap: 10px 12px;
+      align-items: start;
+      min-height: 108px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--soft);
+    }
+
+    .action-block > .button {
+      grid-column: 2;
+      grid-row: 2;
+      width: 100%;
+      height: 40px;
+      justify-self: stretch;
+    }
+
+    .action-block.disabled {
+      opacity: 0.72;
+    }
+
+    .action-info {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      overflow: hidden;
+      min-height: 26px;
+    }
+
+    .action-info strong {
+      display: block;
+      font-size: 14px;
+      line-height: 1.25;
+    }
+
+    .action-info span {
+      display: none;
+      margin-left: 0;
+      margin-top: 0;
+      color: var(--muted);
+      font-size: 10.5px;
+      line-height: 1.2;
+      white-space: normal;
+    }
+
+    .safe-note {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .progress-card {
+      padding: 16px 20px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .progress-head,
+    .task-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .progress-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 6px rgba(8, 115, 95, 0.12);
+    }
+
+    .percent {
+      color: var(--primary);
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .bar {
+      height: 12px;
+      border-radius: 999px;
+      background: #dfe9ec;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      width: 67%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #0d806c, #21a088);
+    }
+
+    .task-meta {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .result-card {
+      padding: 16px;
+      display: grid;
+      grid-template-rows: auto auto auto auto;
+      gap: 14px;
+      min-height: 0;
+    }
+
+    .result-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .result-head strong {
+      font-size: 17px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .metric {
+      min-height: 88px;
+      padding: 16px;
+      display: grid;
+      align-content: center;
+      gap: 8px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+
+    .metric.good {
+      background: var(--primary-soft);
+      border-color: #bce2d9;
+    }
+
+    .metric label {
+      color: var(--muted);
+      line-height: 1;
+    }
+
+    .metric strong {
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .table {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      align-self: start;
+    }
+
+    .tr {
+      height: 44px;
+      padding: 0 14px;
+      display: grid;
+      grid-template-columns: 1.1fr 1.2fr 0.7fr 1.2fr;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      color: #344a52;
+    }
+
+    .tr:last-child { border-bottom: none; }
+
+    .tr.head {
+      height: 40px;
+      background: #f4f8f9;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .pill {
+      width: fit-content;
+      height: 26px;
+      padding: 0 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      color: var(--primary);
+      background: var(--primary-soft);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .log-row {
+      height: 66px;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-radius: 14px;
+      background: var(--ink);
+      color: white;
+    }
+
+    .log-row strong,
+    .log-row span {
+      display: block;
+      line-height: 1;
+    }
+
+    .log-row span {
+      margin-top: 8px;
+      color: #c7d5d8;
+      font-size: 12px;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(16, 32, 39, 0.42);
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal {
+      width: 560px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 24px 70px rgba(16, 32, 39, 0.22);
+    }
+
+    .modal-head {
+      height: 60px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .modal-head strong {
+      font-size: 17px;
+    }
+
+    .modal-body {
+      padding: 20px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .help-item {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--soft);
+    }
+
+    .help-item strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .help-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <section class="window">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo">Dr</div>
+          <strong>Excel-Dr</strong>
+        </div>
+        <button class="button" id="helpButton">使用说明</button>
+      </header>
+
+      <section class="content">
+        <aside class="left">
+          <div class="hero">
+            <h1>让卡顿的 Excel 变顺畅</h1>
+            <p>选择文件，先检测问题，再新建清理版。</p>
+          </div>
+
+          <div class="card pad">
+            <div class="section-title">
+              <strong>处理对象</strong>
+              <span class="step-tag">第 1 步</span>
+            </div>
+            <div class="segmented">
+              <div class="segment active">单文件</div>
+              <div class="segment">文件夹批量</div>
+            </div>
+            <div class="file-box">
+              <div class="file-row">
+                <div class="file-icon">XLSX</div>
+                <strong>月度订单汇总.xlsx</strong>
+              </div>
+              <div class="file-meta">42.8 MB · 将在原目录生成清理版</div>
+            </div>
+            <div class="button" style="width:100%;">重新选择文件</div>
+          </div>
+
+          <div class="card operation-card">
+            <div class="section-title">
+              <strong>操作</strong>
+              <span class="step-tag">按顺序执行</span>
+            </div>
+            <div class="action-block">
+              <div class="step-tag">第 2 步</div>
+              <div class="action-info">
+                <strong>只检测问题，不修改文件</strong>
+              </div>
+              <div class="button">仅检测</div>
+            </div>
+            <div class="action-block">
+              <div class="step-tag">第 3 步</div>
+              <div class="action-info">
+                <strong>只新建文件，不修改原文件</strong>
+              </div>
+              <div class="button primary" style="min-width:118px;">清理并新建</div>
+            </div>
+          </div>
+          <div class="safe-note">
+            原文件保持不变，清理结果会生成一个新文件。
+          </div>
+        </aside>
+
+        <section class="right">
+          <div class="card progress-card">
+            <div class="progress-head">
+              <div class="progress-title"><span class="dot"></span>正在处理文件</div>
+              <div class="percent">67%</div>
+            </div>
+            <div class="bar"><span></span></div>
+            <div class="task-meta">
+              <span>当前：drawing3.xml</span>
+              <span>请稍候</span>
+            </div>
+          </div>
+
+          <div class="card result-card">
+            <div class="result-head">
+              <strong>检测结果</strong>
+              <span class="step-tag">发现可清理内容</span>
+            </div>
+            <div class="metrics">
+              <div class="metric good"><label>扫描文件</label><strong>1</strong></div>
+              <div class="metric"><label>可清理对象</label><strong>12,960</strong></div>
+              <div class="metric"><label>损坏规则</label><strong>2</strong></div>
+              <div class="metric"><label>输出文件</label><strong>1</strong></div>
+            </div>
+            <div class="table">
+              <div class="tr head"><span>位置</span><span>问题</span><span>数量</span><span>处理方式</span></div>
+              <div class="tr"><span>订单明细</span><span>隐藏对象过多</span><strong>12,960</strong><span class="pill">清理</span></div>
+              <div class="tr"><span>录入模板</span><span>无效规则</span><strong>2</strong><span class="pill">修复</span></div>
+            </div>
+            <div class="log-row">
+              <div>
+                <strong>输出位置</strong>
+                <span>F:\报表\月度订单汇总_cleaned.xlsx</span>
+              </div>
+              <div class="button">打开输出文件夹</div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </section>
+
+    <div class="modal-backdrop" id="helpModal" aria-hidden="true">
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+        <header class="modal-head">
+          <strong id="helpTitle">使用说明</strong>
+          <button class="button" id="closeHelp">关闭</button>
+        </header>
+        <div class="modal-body">
+          <div class="help-item">
+            <strong>1. 先选文件</strong>
+            <p>选择一个 Excel 文件，或选择包含多个 Excel 文件的文件夹。</p>
+          </div>
+          <div class="help-item">
+            <strong>2. 先检测</strong>
+            <p>检测只查看问题，不会修改你的文件。</p>
+          </div>
+          <div class="help-item">
+            <strong>3. 再清理</strong>
+            <p>发现问题后，点击“清理并新建”，软件会生成一个新的清理版文件。</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const helpButton = document.getElementById("helpButton");
+    const closeHelp = document.getElementById("closeHelp");
+    const helpModal = document.getElementById("helpModal");
+    helpButton.addEventListener("click", () => {
+      helpModal.classList.add("open");
+      helpModal.setAttribute("aria-hidden", "false");
+    });
+    closeHelp.addEventListener("click", () => {
+      helpModal.classList.remove("open");
+      helpModal.setAttribute("aria-hidden", "true");
+    });
+    helpModal.addEventListener("click", (event) => {
+      if (event.target === helpModal) closeHelp.click();
+    });
+    if (window.location.hash === "#help") {
+      helpButton.click();
+    }
+  </script>
+</body>
+</html>
